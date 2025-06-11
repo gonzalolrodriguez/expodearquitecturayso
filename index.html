@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografía: Linux y Kali Linux</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #020617;
+            color: #e2e8f0;
+        }
+
+        .chart-container {
+            position: relative;
+            width: 100%;
+            height: 320px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+
+        .text-accent {
+            color: #EE9B00;
+        }
+
+        .bg-accent {
+            background-color: #0A9396;
+        }
+
+        .border-accent {
+            border-color: #0A9396;
+        }
+
+        .card {
+            background-color: #0f172a;
+            border: 1px solid #1e293b;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(10, 147, 150, 0.2);
+        }
+
+        .flowchart-step {
+            border-left-width: 4px;
+            position: relative;
+            padding-left: 1.5rem;
+            padding-bottom: 2rem;
+        }
+
+        .flowchart-step:before {
+            content: '';
+            position: absolute;
+            left: -10px;
+            top: 0;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background-color: #94D2BD;
+            border: 3px solid #0f172a;
+        }
+
+        .flowchart-step:last-child {
+            padding-bottom: 0;
+            border-left: 4px solid transparent;
+        }
+
+        .venn-circle {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 1rem;
+            font-weight: bold;
+            color: white;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+
+    <section id="presentation-view"
+        class="min-h-screen flex items-center justify-center text-center p-4 bg-gray-900 text-slate-200">
+        <div class="max-w-3xl mx-auto space-y-6">
+            <h1 class="text-4xl md:text-5xl font-black text-accent mb-6">Instituto Politécnico Formosa</h1>
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Tecnicatura Superior en Desarrollo de Software</h2>
+            <h3 class="text-2xl md:text-3xl font-semibold mb-8">Arquitectura y Sistemas Operativos</h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+                <div class="card rounded-lg p-6">
+                    <h4 class="text-xl font-bold text-slate-300 mb-4">Profesores:</h4>
+                    <ul class="space-y-2 text-slate-400">
+                        <li><span class="font-bold">Titular:</span> Mgter. Víctor Hugo Ruchinsky</li>
+                        <li><span class="font-bold">JTP:</span> T.S.D.S.M. Augusto Chaves Fiore</li>
+                    </ul>
+                </div>
+                <div class="card rounded-lg p-6">
+                    <h4 class="text-xl font-bold text-slate-300 mb-4">Alumnos:</h4>
+                    <ul class="space-y-2 text-slate-400">
+                        <li>Aguero, Matias</li>
+                        <li>Mendoza, José</li>
+                        <li>Miño Presentado, Santiago</li>
+                        <li>Rodriguez, Gonzalo</li>
+                        <li>Silvera, Matias</li>
+                        <li>Mendoza</li>
+                    </ul>
+                </div>
+            </div>
+            <p class="mt-10 text-xl md:text-2xl font-bold text-slate-400">¡Presiona cualquier tecla o desplázate para
+                comenzar!</p>
+        </div>
+    </section>
+
+    <main class="container mx-auto px-4 py-8 md:py-16">
+
+        <header class="text-center mb-16">
+            <h1 class="text-4xl md:text-6xl font-black mb-4">LINUX Y <span class="text-accent">KALI LINUX</span></h1>
+            <p class="text-lg md:text-xl text-slate-400 max-w-3xl mx-auto">Desentrañando el poder del software libre y
+                la ciberseguridad a través de una infografía interactiva.</p>
+        </header>
+
+        <section id="linux" class="mb-20">
+            <h2 class="text-3xl font-bold text-center mb-10">¿Qué es Linux? <span class="text-slate-500">El Corazón del
+                    Software Libre</span></h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="card rounded-lg shadow-lg p-6 text-center">
+                    <div class="text-7xl font-black text-accent mb-4">🐧</div>
+                    <h3 class="text-2xl font-bold mb-2">El Kernel</h3>
+                    <p class="text-slate-400">Linux en sí mismo no es un SO completo, sino el **núcleo (kernel)**. Es el
+                        componente central que gestiona los recursos del sistema: CPU, memoria y dispositivos. Es el
+                        cerebro que permite que el software hable con el hardware.</p>
+                </div>
+                <div class="card rounded-lg shadow-lg p-6 text-center">
+                    <div class="text-7xl font-black text-accent mb-4">🔓</div>
+                    <h3 class="text-2xl font-bold mb-2">Código Abierto y Libre</h3>
+                    <p class="text-slate-400">Su código fuente es accesible para todos. Esta filosofía fomenta la
+                        transparencia, la seguridad a través de la revisión por pares y una innovación constante
+                        impulsada por una comunidad global de desarrolladores.</p>
+                </div>
+                <div class="card rounded-lg shadow-lg p-6 text-center">
+                    <div class="text-7xl font-black text-accent mb-4">📚</div>
+                    <h3 class="text-2xl font-bold mb-2">Distribuciones</h3>
+                    <p class="text-slate-400">El kernel se empaqueta con software adicional (entornos de escritorio,
+                        utilidades) para crear "distribuciones" o "distros" (ej. Ubuntu, Debian, Fedora). Cada una
+                        ofrece una experiencia de usuario diferente sobre la misma base sólida.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="kali" class="mb-20">
+            <h2 class="text-3xl font-bold text-center mb-10">¿Qué es Kali Linux? <span class="text-slate-500">La Navaja
+                    Suiza del Hacker Ético</span></h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="card rounded-lg shadow-lg p-6">
+                    <h3 class="text-2xl font-bold mb-4 text-center">Enfoque y Herramientas</h3>
+                    <p class="text-slate-400 mb-6 text-center">Kali es una distribución basada en Debian, diseñada
+                        específicamente para profesionales de la ciberseguridad. Su principal valor es la vasta
+                        colección de utilidades preinstaladas y configuradas, listas para ser usadas en diversas tareas.
+                    </p>
+                    <div class="flex justify-around items-center text-center">
+                        <div>
+                            <p class="text-6xl font-black text-accent">600+</p>
+                            <p class="text-slate-300 font-bold">Herramientas</p>
+                        </div>
+                        <div>
+                            <p class="text-6xl font-black text-accent">Debian</p>
+                            <p class="text-slate-300 font-bold">Base Sólida</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card rounded-lg shadow-lg p-6">
+                    <h3 class="text-2xl font-bold mb-4 text-center">Áreas de Aplicación</h3>
+                    <p class="text-slate-400 mb-4 text-center">Las herramientas de Kali cubren todo el espectro de una
+                        auditoría de seguridad. El siguiente gráfico muestra una distribución representativa de sus
+                        áreas de enfoque principales.</p>
+                    <div class="chart-container h-64 md:h-80">
+                        <canvas id="kaliFocusChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="requisitos" class="mb-20">
+            <h2 class="text-3xl font-bold text-center mb-10">Requisitos de Instalación</h2>
+            <div class="card rounded-lg shadow-lg p-6 max-w-4xl mx-auto">
+                <p class="text-slate-400 mb-6 text-center">Aunque Kali es flexible, un hardware adecuado garantiza una
+                    experiencia fluida, especialmente al ejecutar herramientas que consumen muchos recursos. Aquí se
+                    comparan las especificaciones mínimas con las recomendadas.</p>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left">
+                        <thead>
+                            <tr class="border-b border-slate-700">
+                                <th class="p-4">Componente</th>
+                                <th class="p-4">Mínimo</th>
+                                <th class="p-4 text-accent">Recomendado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b border-slate-800">
+                                <td class="p-4 font-bold">CPU</td>
+                                <td class="p-4">2 GHz</td>
+                                <td class="p-4 text-slate-300">Multi-núcleo 2+ GHz</td>
+                            </tr>
+                            <tr class="border-b border-slate-800">
+                                <td class="p-4 font-bold">RAM</td>
+                                <td class="p-4">2 GB</td>
+                                <td class="p-4 text-slate-300">8 GB+</td>
+                            </tr>
+                            <tr class="border-b border-slate-800">
+                                <td class="p-4 font-bold">Disco Duro</td>
+                                <td class="p-4">20 GB</td>
+                                <td class="p-4 text-slate-300">50 GB+ SSD</td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-bold">Instalación</td>
+                                <td class="p-4">Dual Boot / Nativa</td>
+                                <td class="p-4 text-slate-300">Máquina Virtual (VM)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section id="instalacion" class="mb-20">
+            <h2 class="text-3xl font-bold text-center mb-10">Proceso de Instalación Simplificado</h2>
+            <div class="card rounded-lg shadow-lg p-8 max-w-2xl mx-auto">
+                <p class="text-slate-400 mb-8 text-center">Instalar Kali es un proceso guiado. Este diagrama de flujo
+                    resume los pasos clave desde la descarga inicial hasta tener un sistema funcional.</p>
+                <div class="relative">
+                    <div class="flowchart-step border-accent">
+                        <h4 class="font-bold text-lg text-slate-200">1. Descargar la Imagen ISO</h4>
+                        <p class="text-slate-400">Obtener la imagen oficial y verificada desde kali.org.</p>
+                    </div>
+                    <div class="flowchart-step border-accent">
+                        <h4 class="font-bold text-lg text-slate-200">2. Crear Medio de Arranque</h4>
+                        <p class="text-slate-400">Usar herramientas como Balena Etcher o Rufus para crear un USB
+                            booteable.</p>
+                    </div>
+                    <div class="flowchart-step border-accent">
+                        <h4 class="font-bold text-lg text-slate-200">3. Configurar BIOS/UEFI</h4>
+                        <p class="text-slate-400">Reiniciar el equipo y configurar el orden de arranque para iniciar
+                            desde el USB.</p>
+                    </div>
+                    <div class="flowchart-step border-accent">
+                        <h4 class="font-bold text-lg text-slate-200">4. Seguir el Asistente</h4>
+                        <p class="text-slate-400">Configurar idioma, red, usuario y una contraseña robusta para root.
+                        </p>
+                    </div>
+                    <div class="flowchart-step border-accent">
+                        <h4 class="font-bold text-lg text-slate-200">5. Particionar y Finalizar</h4>
+                        <p class="text-slate-400">Elegir el esquema de particionado (guiado o manual) e instalar el
+                            sistema.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="pros-contras" class="mb-20">
+            <h2 class="text-3xl font-bold text-center mb-10">Ventajas y Desventajas</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                <div class="card rounded-lg shadow-lg p-6">
+                    <h3 class="text-2xl font-bold text-green-400 mb-4">✅ Ventajas</h3>
+                    <ul class="space-y-3 text-slate-300">
+                        <li><span class="font-bold">Arsenal Completo:</span> Vasta colección de herramientas
+                            preinstaladas.</li>
+                        <li><span class="font-bold">Actualizaciones Constantes:</span> Siempre al día con las últimas
+                            técnicas y exploits.</li>
+                        <li><span class="font-bold">Comunidad Activa:</span> Gran cantidad de documentación y soporte
+                            comunitario.</li>
+                        <li><span class="font-bold">Plataforma Educativa:</span> Ideal para el aprendizaje práctico de
+                            ciberseguridad.</li>
+                    </ul>
+                </div>
+                <div class="card rounded-lg shadow-lg p-6">
+                    <h3 class="text-2xl font-bold text-red-400 mb-4">❌ Desventajas</h3>
+                    <ul class="space-y-3 text-slate-300">
+                        <li><span class="font-bold">Curva de Aprendizaje:</span> No es para principiantes en Linux o
+                            seguridad.</li>
+                        <li><span class="font-bold">No para Uso Diario:</span> No está optimizado para tareas cotidianas
+                            (ofimática, etc.).</li>
+                        <li><span class="font-bold">Riesgo de Mal Uso:</span> Las herramientas son poderosas y pueden
+                            usarse con fines maliciosos.</li>
+                        <li><span class="font-bold">Seguridad del Usuario:</span> La seguridad final del sistema depende
+                            enteramente del usuario.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="casos-uso" class="mb-20">
+            <h2 class="text-3xl font-bold text-center mb-10">Casos de Uso Principales</h2>
+            <div class="card rounded-lg shadow-lg p-6 max-w-4xl mx-auto">
+                <p class="text-slate-400 mb-6 text-center">Kali es una herramienta multi-propósito en el mundo de la
+                    seguridad ofensiva. El siguiente gráfico compara la frecuencia de uso en las disciplinas más
+                    comunes, destacando su fuerte enfoque en las pruebas de penetración.</p>
+                <div class="chart-container">
+                    <canvas id="useCasesChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <section id="herramientas" class="mb-20">
+            <h2 class="text-3xl font-bold text-center mb-10">Herramientas Destacadas por Influencia</h2>
+            <div class="card rounded-lg shadow-lg p-6 max-w-4xl mx-auto">
+                <p class="text-slate-400 mb-6 text-center">De las más de 600 herramientas disponibles, algunas son
+                    pilares fundamentales en el arsenal de cualquier profesional. Este gráfico clasifica una selección
+                    de herramientas icónicas según su influencia y frecuencia de uso en la industria.</p>
+                <div class="chart-container">
+                    <canvas id="toolsChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <section id="seguridad" class="mb-20">
+            <h2 class="text-3xl font-bold text-center mb-10">Modelo de Seguridad: La Responsabilidad es Tuya</h2>
+            <div class="card rounded-lg shadow-lg p-8">
+                <p class="text-slate-400 mb-8 text-center">La seguridad de Kali no es automática; es el resultado de la
+                    sinergia entre las herramientas que provee el sistema y las buenas prácticas del usuario. Este
+                    diagrama de Venn ilustra cómo la verdadera seguridad reside en la intersección de ambos dominios.
+                </p>
+                <div class="relative h-64 w-full flex justify-center items-center">
+                    <div class="venn-circle" style="background-color: rgba(10, 147, 150, 0.7); left: 30%;">
+                        Sistema Seguro (Actualizaciones, Repositorios)
+                    </div>
+                    <div class="venn-circle" style="background-color: rgba(238, 155, 0, 0.7); right: 30%;">
+                        Usuario Responsable (Contraseñas, Firewall, Prácticas)
+                    </div>
+                    <div class="absolute text-center font-black text-lg">
+                        <p>SEGURIDAD</p>
+                        <p>REAL</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="comandos" class="mb-20">
+            <h2 class="text-3xl font-bold text-center mb-10">Comandos Esenciales para Empezar</h2>
+            <div class="card rounded-lg shadow-lg p-6 max-w-4xl mx-auto">
+                <p class="text-slate-400 mb-6 text-center">La terminal es el corazón de Kali. Dominar estos comandos
+                    básicos es el primer paso para utilizar el sistema de manera efectiva.</p>
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 text-center">
+                    <div class="bg-slate-800 p-3 rounded-lg"><code class="text-accent font-mono">sudo apt update</code>
+                    </div>
+                    <div class="bg-slate-800 p-3 rounded-lg"><code class="text-accent font-mono">sudo apt upgrade</code>
+                    </div>
+                    <div class="bg-slate-800 p-3 rounded-lg"><code class="text-accent font-mono">ls -la</code></div>
+                    <div class="bg-slate-800 p-3 rounded-lg"><code class="text-accent font-mono">cd [directorio]</code>
+                    </div>
+                    <div class="bg-slate-800 p-3 rounded-lg"><code class="text-accent font-mono">ip a</code></div>
+                    <div class="bg-slate-800 p-3 rounded-lg"><code class="text-accent font-mono">ping [host]</code>
+                    </div>
+                    <div class="bg-slate-800 p-3 rounded-lg"><code class="text-accent font-mono">man [comando]</code>
+                    </div>
+                    <div class="bg-slate-800 p-3 rounded-lg"><code class="text-accent font-mono">whoami</code></div>
+                    <div class="bg-slate-800 p-3 rounded-lg"><code class="text-accent font-mono">history</code></div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="text-center mt-16 text-slate-500">
+            <p>Infografía creada para fines educativos. Utilice estas herramientas de forma responsable y ética.</p>
+            <p>&copy; 2024. Todos los derechos reservados.</p>
+        </footer>
+
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            const CHAR_LIMIT = 16;
+
+            function wrapLabel(str) {
+                if (str.length <= CHAR_LIMIT) {
+                    return str;
+                }
+                const words = str.split(' ');
+                const lines = [];
+                let currentLine = '';
+                for (const word of words) {
+                    if ((currentLine + word).length > CHAR_LIMIT && currentLine.length > 0) {
+                        lines.push(currentLine.trim());
+                        currentLine = '';
+                    }
+                    currentLine += word + ' ';
+                }
+                lines.push(currentLine.trim());
+                return lines;
+            }
+
+            const tooltipTitleCallback = {
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: '#e2e8f0'
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: function (tooltipItems) {
+                                const item = tooltipItems[0];
+                                let label = item.chart.data.labels[item.dataIndex];
+                                if (Array.isArray(label)) {
+                                    return label.join(' ');
+                                } else {
+                                    return label;
+                                }
+                            }
+                        }
+                    }
+                }
+            };
+
+            Chart.defaults.color = '#94a3b8';
+            Chart.defaults.borderColor = '#334155';
+
+            function createKaliFocusChart() {
+                const ctx = document.getElementById('kaliFocusChart')?.getContext('2d');
+                if (!ctx) return;
+                new Chart(ctx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['Pruebas de Penetración', 'Análisis Forense', 'Auditorías de Seguridad', 'Ingeniería Inversa', 'Otros'],
+                        datasets: [{
+                            label: 'Enfoque de Kali',
+                            data: [45, 20, 25, 5, 5],
+                            backgroundColor: ['#0A9396', '#94D2BD', '#E9D8A6', '#EE9B00', '#CA6702'],
+                            borderColor: '#0f172a',
+                            borderWidth: 4
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        cutout: '60%',
+                        plugins: tooltipTitleCallback.plugins
+                    }
+                });
+            }
+
+            function createUseCasesChart() {
+                const ctx = document.getElementById('useCasesChart')?.getContext('2d');
+                if (!ctx) return;
+                const rawLabels = ['Pruebas de Penetración', 'Auditorías de Seguridad', 'Análisis Forense Digital', 'Educación y Entrenamiento', 'Desarrollo de Exploits'];
+                new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: rawLabels.map(wrapLabel),
+                        datasets: [{
+                            label: 'Frecuencia de Uso',
+                            data: [90, 75, 60, 80, 50],
+                            backgroundColor: '#0A9396',
+                            borderColor: '#94D2BD',
+                            borderWidth: 1,
+                            borderRadius: 5
+                        }]
+                    },
+                    options: {
+                        indexAxis: 'y',
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            x: {
+                                beginAtZero: true,
+                                grid: { color: '#1e293b' }
+                            },
+                            y: {
+                                grid: { display: false }
+                            }
+                        },
+                        ...tooltipTitleCallback
+                    }
+                });
+            }
+
+            function createToolsChart() {
+                const ctx = document.getElementById('toolsChart')?.getContext('2d');
+                if (!ctx) return;
+                const rawLabels = ['Metasploit Framework', 'Nmap', 'Wireshark', 'Burp Suite', 'John the Ripper / Hashcat', 'Aircrack-ng', 'SQLMap'];
+                new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: rawLabels.map(wrapLabel),
+                        datasets: [{
+                            label: 'Nivel de Influencia',
+                            data: [95, 92, 88, 85, 80, 78, 75],
+                            backgroundColor: ['#005F73', '#0A9396', '#94D2BD', '#E9D8A6', '#EE9B00', '#CA6702', '#BB3E03'],
+                            borderWidth: 0
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            x: { grid: { display: false } },
+                            y: {
+                                beginAtZero: true,
+                                grid: { color: '#1e293b' }
+                            }
+                        },
+                        ...tooltipTitleCallback
+                    }
+                });
+            }
+
+            createKaliFocusChart();
+            createUseCasesChart();
+            createToolsChart();
+        });
+    </script>
+
+</body>
+
+</html>
